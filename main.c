@@ -42,7 +42,7 @@ DWORD GetProcessIdByName(char *ProcessName) {
     */
     HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
     /*
-    * 
+    * Iterate over all processes comparing their names.
     */
     while ( Process32Next(hSnapshot, &ProcessInfo) ) {
         if ( strcmp(ProcessInfo.szExeFile, ProcessName) == 0 ) {
